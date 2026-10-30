@@ -4,6 +4,8 @@ Weather app in plain HTML, CSS and JavaScript. City search with suggestions, cur
 24-hour strip and 7-day forecast. Data comes from the free [Open-Meteo](https://open-meteo.com/) API,
 so there is no API key to manage and nothing to deploy besides static files.
 
+![Screenshot](docs/screenshot.jpg)
+
 **Live:** https://tigran-ohanyan.github.io/weather-now/
 
 ## Features
