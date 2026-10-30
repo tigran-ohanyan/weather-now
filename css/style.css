@@ -36,7 +36,8 @@ body[data-sky="rain"] .unit span.on, body[data-sky="storm"] .unit span.on, body[
 .recent { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .recent button { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.85rem; }
 
-.main { display: grid; gap: 1rem; }
+.main { display: grid; gap: 1rem; min-width: 0; }
+.main > section { min-width: 0; }
 .state p { text-align: center; color: var(--muted); padding: 3rem 1rem; margin: 0; }
 .loading::after { content: ""; display: inline-block; width: 0.9em; height: 0.9em; margin-left: 0.5rem; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; vertical-align: -0.15em; animation: spin 0.8s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -52,7 +53,7 @@ body[data-sky="rain"] .unit span.on, body[data-sky="storm"] .unit span.on, body[
 .details li { display: grid; gap: 0.1rem; font-size: 0.95rem; }
 .details span { color: var(--muted); font-size: 0.8rem; }
 
-.hourly { display: flex; gap: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; scroll-snap-type: x mandatory; }
+.hourly { display: flex; gap: 0.5rem; overflow-x: auto; min-width: 0; max-width: 100%; padding-bottom: 0.5rem; scroll-snap-type: x mandatory; }
 .hour { min-width: 68px; display: grid; justify-items: center; gap: 0.25rem; padding: 0.6rem 0.4rem; border-radius: 14px; background: var(--line); scroll-snap-align: start; font-size: 0.85rem; }
 .hour-icon { font-size: 1.4rem; }
 .hour small { color: var(--muted); font-size: 0.72rem; }
