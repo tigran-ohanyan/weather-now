@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Now</title>
+  <meta name="description" content="Current weather, 24-hour and 7-day forecast for any city. Open-Meteo data, no API key, no framework.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='30' fill='%23fbbf24'/></svg>">
+</head>
+<body data-sky="day">
+  <div class="app">
+    <header class="bar">
+      <div class="brand">☀️ Weather Now</div>
+      <div class="bar-actions">
+        <button class="unit" id="unit-toggle" aria-label="Switch temperature unit"><span data-u="c" class="on">°C</span><span data-u="f">°F</span></button>
+        <button class="icon" id="geo-btn" title="Use my location" aria-label="Use my location">◎</button>
+      </div>
+    </header>
+
+    <form class="search" id="search-form" role="search" autocomplete="off">
+      <input id="search" type="search" placeholder="Search a city…" aria-label="Search a city" aria-autocomplete="list" aria-controls="suggestions">
+      <ul class="suggestions" id="suggestions" role="listbox" hidden></ul>
+    </form>
+    <div class="recent" id="recent"></div>
+
+    <main id="main" class="main" aria-live="polite">
+      <section class="state" id="state"><p>Search for a city or use your location to see the weather.</p></section>
+
+      <section class="current" id="current" hidden>
+        <div class="current-head">
+          <div><h1 id="place"></h1><p class="muted" id="updated"></p></div>
+          <div class="cond"><span class="cond-icon" id="cond-icon"></span><span id="cond-text"></span></div>
+        </div>
+        <div class="temp-row">
+          <div class="temp" id="temp"></div>
+          <ul class="details">
+            <li><span>Feels like</span><strong id="feels"></strong></li>
+            <li><span>Humidity</span><strong id="humidity"></strong></li>
+            <li><span>Wind</span><strong id="wind"></strong></li>
+            <li><span>Precipitation</span><strong id="precip"></strong></li>
+            <li><span>UV index</span><strong id="uv"></strong></li>
+            <li><span>Sunrise / sunset</span><strong id="sun"></strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel" id="hourly-panel" hidden>
+        <h2>Next 24 hours</h2>
+        <div class="hourly" id="hourly"></div>
+      </section>
+
+      <section class="panel" id="daily-panel" hidden>
+        <h2>7-day forecast</h2>
+        <ul class="daily" id="daily"></ul>
+      </section>
+    </main>
+
+    <footer class="foot">Data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. <a href="https://github.com/tigran-ohanyan/weather-now" target="_blank" rel="noopener">Source</a></footer>
+  </div>
+  <script src="js/weather.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
